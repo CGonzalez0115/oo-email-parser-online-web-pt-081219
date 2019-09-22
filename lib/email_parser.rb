@@ -7,7 +7,8 @@ class EmailAddressParser
 
   def parse
     csv_emails.split(',')
-    address.split(',')
+      address.split(',')
+    end
+    .flatten.uniq
   end
-  @csv_emails.flatten.uniq
 end
