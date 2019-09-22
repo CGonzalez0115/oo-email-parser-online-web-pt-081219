@@ -7,9 +7,7 @@ class EmailAddressParser
   end
 
   def parse
-    @email_addresses = @email_addresses.gsub(/[\s,]/ ,"")
     csv_emails.split(',')
       address.split(',')
-      @email_addresses.uniq
     end
   end
