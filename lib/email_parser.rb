@@ -9,5 +9,4 @@ class EmailAddressParser
     csv_emails.split(',')
     address.split(',')
   end
-  email_addresses.flatten.uniq
 end
