@@ -1,19 +1,14 @@
 class EmailAddressParser
-  attr_accessor :CSV_emails, :delimited_emails
-  @@emails
+  attr_accessor :email
 
-  def self.emails
-    @@emails
+  def initialize(emails)
+    @email = emails
   end
 
-  def parse(emails)
-    new_email = email.split("-")
-    csv_emails = new_email
-    delimited_emails = new_email
-    emailaddressparser = self.new
-    emailaddressparser.csv_emails = csv_emails
-    emailaddressparser.delimited_emails = delimited_emails
-    emailaddressparser
+  def parse
+    email_array = @email.split(/[,]/).uniq
+    email_array.reject! {|element| element.empty?}
+    email_array
   end
 end
 # Build a class EmailParser that accepts a string of unformatted
